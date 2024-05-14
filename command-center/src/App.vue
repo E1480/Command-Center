@@ -37,6 +37,7 @@ function addNewTile(){
 
     TileName.value = ''
     Link.value = ''
+    Description.value = ''
 
     if(popUp.value == 'show'){
         popUp.value = 'hide'
@@ -63,11 +64,12 @@ function addNewTile(){
 
     <main>
         <Tile v-for="tiles in Saved_Tiles"
-        :key="tiles.id"
-        :title="tiles.name"
-        :link="tiles.link"
-        :description="tiles.desc"
-        :text_align="tiles.align"/>
+            :key="tiles.id"
+            :title="tiles.name"
+            :link="tiles.link"
+            :description="tiles.desc"
+            :text_align="tiles.align"
+        />
 
 
         

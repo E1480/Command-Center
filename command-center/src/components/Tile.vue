@@ -34,6 +34,7 @@ const props = defineProps({
         border: rgba(128, 128, 128, 0.123) 1px solid;
         border-radius: 10px;
         color: white;
+        overflow-wrap: break-word;
         transition: 0.5s;
     }
     .container:hover{

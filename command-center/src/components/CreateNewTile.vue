@@ -9,6 +9,7 @@ function submit(){
 const name = defineModel('name')
 const link = defineModel('link')
 const desc = defineModel('desc')
+const align = defineModel('align')
 
 </script>
 
@@ -16,8 +17,17 @@ const desc = defineModel('desc')
 <form @submit.prevent="submit">
         <h1>Create a New Tile</h1>
         <input v-model="name" placeholder="Title" required><br/>
-        <input v-model="desc" placeholder="Description"><br/>
+        <textarea v-model="desc" placeholder="Description"></textarea><br/>
         <input v-model="link" placeholder="Link e.g. Google.com"><br/>
+
+        <label for="align">Select Alignment:</label><br/>
+        <select v-model="align" name="alaign">
+            <option disabled value="">Alignment</option>
+            <option>left</option>
+            <option>center</option>
+            <option>right</option>
+        </select>
+        <br/>
         <button>Add</button>
     </form>
 </template>
@@ -43,5 +53,9 @@ form{
 form *{
     margin: 5px;
     padding: 5px;
+}
+
+form select{
+    color: black;
 }
 </style>
