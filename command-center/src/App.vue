@@ -35,4 +35,9 @@ function addNewTile(){
 
 <style scoped>
 
+.nav button{
+    transform:translate3D(0px,-0.5em,0px);
+    margin-left: 3em;
+}
+
 </style>
