@@ -48,6 +48,4 @@ function addNewTile(){
     margin-left: 3em;
 }
 
-
-
 </style>
