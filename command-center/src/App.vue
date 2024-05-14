@@ -11,6 +11,7 @@ const AppTitle = ref('Command Center')
 const TileName = ref('')
 const Link = ref('')
 const Description = ref('')
+const Alignment = ref('')
 
 const popUp = ref('hide')
 
@@ -32,7 +33,7 @@ function addNewTile(){
         name:TileName.value,
         link:Link.value,
         desc:Description.value,
-        align:'center'
+        align:Alignment.value
     })
 
     TileName.value = ''
@@ -53,6 +54,7 @@ function addNewTile(){
             v-model:name="TileName"
             v-model:link="Link"
             v-model:desc="Description"
+            v-model:align="Alignment"
             :class="popUp"
         />
 

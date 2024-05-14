@@ -21,7 +21,7 @@ const align = defineModel('align')
         <input v-model="link" placeholder="Link e.g. Google.com"><br/>
 
         <label for="align">Select Alignment:</label><br/>
-        <select v-model="align" name="alaign">
+        <select v-model="align">
             <option disabled value="">Alignment</option>
             <option>left</option>
             <option>center</option>
