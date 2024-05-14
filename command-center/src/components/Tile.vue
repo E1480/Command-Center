@@ -10,11 +10,11 @@ const props = defineProps({
 </script>
 
 <template>
-
-<div class="container" :class="text_align || 'center'">
-    <h2>{{ title }}</h2>
-</div>
-
+<a href="https://www.google.com" target="_blank">
+    <div class="container" :class="text_align || 'center'">
+        <h2>{{ title }}</h2>
+    </div>
+</a>
 
 </template>
 
