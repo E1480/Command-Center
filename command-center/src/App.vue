@@ -3,12 +3,17 @@ import { ref } from 'vue';
 import NavComp from './components/Nav.vue';
 
 
-const title = ref("Title")
+const title = ref("Command Center")
 
 </script>
 
 <template>
-    <NavComp :title="title" />
+    <nav>
+        <NavComp :title="title" />
+    </nav>
+    <main>
+        
+    </main>
 </template>
 
 <style scoped>
