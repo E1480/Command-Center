@@ -3,14 +3,15 @@ import { ref } from 'vue';
 
 const props = defineProps({
     title: String,
-    text_align: String
+    text_align: String,
+    link: String
 })
 
 
 </script>
 
 <template>
-<a href="#" target="_blank">
+<a :href="'https://www.'+link" target="_blank">
     <div class="container" :class="text_align || 'center'">
         <h2>{{ title }}</h2>
     </div>
@@ -26,7 +27,7 @@ const props = defineProps({
         margin: 3em;
         /* Dimensions */
         width: 15em;
-        height: 5em;
+        height: 15em;
         /* Border */
         border: rgba(128, 128, 128, 0.123) 1px solid;
         border-radius: 10px;
