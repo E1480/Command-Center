@@ -8,6 +8,7 @@ function submit(){
 
 const name = defineModel('name')
 const link = defineModel('link')
+const desc = defineModel('desc')
 
 </script>
 
@@ -15,6 +16,7 @@ const link = defineModel('link')
 <form @submit.prevent="submit">
         <h1>Create a New Tile</h1>
         <input v-model="name" placeholder="Title" required><br/>
+        <input v-model="desc" placeholder="Description"><br/>
         <input v-model="link" placeholder="Link e.g. Google.com"><br/>
         <button>Add</button>
     </form>

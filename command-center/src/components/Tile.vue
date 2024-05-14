@@ -4,6 +4,7 @@ import { ref } from 'vue';
 const props = defineProps({
     title: String,
     text_align: String,
+    description: String,
     link: String
 })
 
@@ -14,6 +15,7 @@ const props = defineProps({
 <a :href="'https://www.'+link" target="_blank">
     <div class="container" :class="text_align || 'center'">
         <h2>{{ title }}</h2>
+        <p>{{ description }}</p>
     </div>
 </a>
 

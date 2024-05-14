@@ -3,7 +3,6 @@ import { ref } from 'vue';
 import NavComp from './components/Nav.vue';
 import Tile from './components/Tile.vue';
 import CreateNewTile from './components/CreateNewTile.vue';
-import { show } from '../src-cordova/platforms/android/platform_www/cordova';
 
 let id = 0
 
@@ -11,27 +10,54 @@ let id = 0
 const AppTitle = ref('Command Center')
 const TileName = ref('')
 const Link = ref('')
-const popup = ref('hide')
+const Description = ref('')
+
+const popUp = ref('hide')
 
 const Saved_Tiles = ref([
 ])
 
+function popup(){
+    if(popUp.value == 'hide'){
+        popUp.value = 'show'
+    }else if(popUp.value == 'show'){
+        popUp.value = 'hide'
+    }
+}
+
 
 function addNewTile(){
-    Saved_Tiles.value.push({id: id++, name:TileName.value, link:Link.value, align:'center'})
+    Saved_Tiles.value.push({
+        id: id++,
+        name:TileName.value,
+        link:Link.value,
+        desc:Description.value,
+        align:'center'
+    })
+
     TileName.value = ''
     Link.value = ''
+
+    if(popUp.value == 'show'){
+        popUp.value = 'hide'
+    }
 }
 
 </script>
 
 <template>
 
-    
+        <CreateNewTile
+            @response="addNewTile"
+            v-model:name="TileName"
+            v-model:link="Link"
+            v-model:desc="Description"
+            :class="popUp"
+        />
 
     <nav>
         <NavComp :title="AppTitle" class="nav">
-            <button @click="popup()">Create New</button>
+            <button @click="popup">Create New</button>
         </NavComp>
     </nav>
 
@@ -40,14 +66,11 @@ function addNewTile(){
         :key="tiles.id"
         :title="tiles.name"
         :link="tiles.link"
+        :description="tiles.desc"
         :text_align="tiles.align"/>
 
 
-        <CreateNewTile
-            @response="addNewTile"
-            v-model:name="TileName"
-            v-model:link="Link"
-        />
+        
     </main>
 </template>
 
@@ -62,11 +85,13 @@ function addNewTile(){
 .hide{
     opacity: 0%;
     z-index: -1;
+    transition: 1s;
 }
 
 .show{
     opacity: 100%;
     z-index: 1;
+    transition: 1s;
 }
 
 </style>
