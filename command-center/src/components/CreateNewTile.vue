@@ -1,17 +1,21 @@
 <script setup>
-const props = defineProps({
-    func: Event,
-    name: String,
-    link: String
 
-})
+const emit = defineEmits(['response'])
+
+function submit(){
+    emit("response")
+}
+
+const name = defineModel('name')
+const link = defineModel('link')
+
 </script>
 
 <template>
-<form @submit.prevent="func">
+<form @submit.prevent="submit">
         <h1>Create a New Tile</h1>
-        <input v-bind="name" placeholder="Title" required><br/>
-        <input v-bind="link" placeholder="Link e.g. Google.com"><br/>
+        <input v-model="name" placeholder="Title" required><br/>
+        <input v-model="link" placeholder="Link e.g. Google.com"><br/>
         <button>Add</button>
     </form>
 </template>
