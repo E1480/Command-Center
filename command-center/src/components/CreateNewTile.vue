@@ -39,7 +39,7 @@ form{
     border-radius: 10px;
     width: fit-content;
     min-height: max-content;
-    height: 15em;
+    height: auto;
     padding: 2em;
     background-color: rgba(0, 0, 0, 0.521);
     display: block;

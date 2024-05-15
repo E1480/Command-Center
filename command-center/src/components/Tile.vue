@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-<a :href="'https://www.'+link" target="_blank">
+<a :href="'https://'+link" target="_blank">
     <div class="container" :class="text_align || 'center'">
         <h2>{{ title }}</h2>
         <p>{{ description }}</p>
