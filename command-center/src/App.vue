@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import NavComp from './components/Nav.vue';
-import Tile from './components/Tile.vue';
+import LTile from './components/LinkTile.vue';
 import CreateNewTile from './components/CreateNewTile.vue';
 
 let id = 0
@@ -65,7 +65,7 @@ function addNewTile(){
     </nav>
 
     <main>
-        <Tile v-for="tiles in Saved_Tiles"
+        <LTile v-for="tiles in Saved_Tiles"
             :key="tiles.id"
             :title="tiles.name"
             :link="tiles.link"
